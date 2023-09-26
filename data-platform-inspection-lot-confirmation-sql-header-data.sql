@@ -61,7 +61,7 @@ CREATE TABLE `data_platform_inspection_lot_confirmation_header_data`
     PRIMARY KEY (`InspectionLot`, `Operations`, `OperationsItem`, `OperationID`, `ConfirmationCountingID`),
 	
     CONSTRAINT `DPFMInspectionLotConfHeaderData_fk` FOREIGN KEY (`InspectionLot`, `Operations`, `OperationsItem`, `OperationID`) REFERENCES `data_platform_inspection_lot_operation_data` (`InspectionLot`, `Operations`, `OperationsItem`, `OperationID`),
-    CONSTRAINT `DPFMInspectionLotConfHeaderDataInspection_fk` FOREIGN KEY (`InspectionLot`, `Inspection`) REFERENCES `data_platform_inspection_lot_inspection_data` (`InspectionLot`, `Inspection`),
+    -- CONSTRAINT `DPFMInspectionLotConfHeaderDataInspection_fk` FOREIGN KEY (`InspectionLot`, `Inspection`) REFERENCES `data_platform_inspection_lot_inspection_data` (`InspectionLot`, `Inspection`), テーブルなし
     CONSTRAINT `DPFMInspectionLotConfHeaderDataProductionOrder_fk` FOREIGN KEY (`ProductionOrder`, `ProductionOrderItem`) REFERENCES `data_platform_production_order_item_data` (`ProductionOrder`, `ProductionOrderItem`),
     CONSTRAINT `DPFMInspectionLotConfHeaderDataProductBaseUnit_fk` FOREIGN KEY (`ProductBaseUnit`) REFERENCES `data_platform_quantity_unit_quantity_unit_data` (`QuantityUnit`),
     CONSTRAINT `DPFMInspectionLotConfHeaderDataProductProductionUnit_fk` FOREIGN KEY (`ProductProductionUnit`) REFERENCES `data_platform_quantity_unit_quantity_unit_data` (`QuantityUnit`),
